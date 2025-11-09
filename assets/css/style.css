@@ -720,12 +720,32 @@ footer {
         padding: 4.5rem 0 3.5rem;
     }
 
+    .hero__image {
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero__image img {
+        height: auto;
+        max-height: 320px;
+        width: min(100%, 320px);
+        box-shadow: none;
+    }
+
+    .hero__image::after {
+        inset: -10% 0 -10% 0;
+    }
+
     .hero__badge {
         font-size: 0.7rem;
     }
 
     .hero p {
         font-size: 0.98rem;
+    }
+
+    .newsletter {
+        grid-template-columns: 1fr;
     }
 
     .product-gallery {
@@ -737,8 +757,20 @@ footer {
         max-height: 240px;
     }
 
-    .newsletter {
-        grid-template-columns: 1fr;
+    .newsletter-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .newsletter-form input[type="email"] {
+        width: 100%;
+        flex: 1 1 auto;
+        padding: 0.7rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    .newsletter-form button {
+        width: 100%;
     }
 }
 
