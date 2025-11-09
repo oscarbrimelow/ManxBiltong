@@ -25,3 +25,35 @@ if (basketButtons.length) {
     });
 }
 
+const galleries = document.querySelectorAll('[data-gallery]');
+if (galleries.length) {
+    galleries.forEach((gallery) => {
+        const images = Array.from(gallery.querySelectorAll('[data-gallery-image]'));
+        const prevButton = gallery.querySelector('[data-gallery-prev]');
+        const nextButton = gallery.querySelector('[data-gallery-next]');
+        let currentIndex = 0;
+
+        const showImage = (index) => {
+            images.forEach((img, idx) => {
+                img.classList.toggle('is-active', idx === index);
+            });
+        };
+
+        if (prevButton) {
+            prevButton.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                showImage(currentIndex);
+            });
+        }
+
+        if (nextButton) {
+            nextButton.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % images.length;
+                showImage(currentIndex);
+            });
+        }
+
+        showImage(currentIndex);
+    });
+}
+
