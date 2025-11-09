@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manx Biltong Reviews | Customer Stories & Feedback</title>
+    <meta name="description" content="Read reviews of Manx Biltong and share your own experience. Submit your feedback about our Isle of Man crafted biltong.">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/Favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/Favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="assets/images/Favicon/favicon.ico">
+    <link rel="manifest" href="assets/images/Favicon/site.webmanifest">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container nav">
+            <a href="index.html" class="logo" aria-label="Manx Biltong home">
+                <span>Manx</span> Biltong
+            </a>
+            <button class="nav__toggle" data-nav-toggle aria-label="Toggle navigation" aria-expanded="false">☰</button>
+            <ul class="nav__links" data-nav-links>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="find-us.html">Where to Find Us</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="container">
+            <div class="section-heading">
+                <span>Customer Voices</span>
+                <h1>Reviews from the Manx Biltong Community</h1>
+                <p>Whether you’re powering a Springbok test, watching the TT course-side, or stocking the family snack drawer, we’d love to hear how Manx Biltong fits into your day.</p>
+            </div>
+            <div class="testimonials">
+                <article class="testimonial-card">
+                    <p>“We hand out Manx Biltong at every TT practice night. It’s clean, portable protein and the riders demolish it before the next session.”</p>
+                    <strong>Isle of Man TT Pit Crew</strong>
+                </article>
+                <article class="testimonial-card">
+                    <p>“Perfect pre-game snack for our Springbok viewing parties. The spice, the texture—takes me straight back to Durban.”</p>
+                    <strong>Andre &amp; Thandi, Ramsey</strong>
+                </article>
+                <article class="testimonial-card">
+                    <p>“Steven’s Classic Manx Cut now features on our cheeseboard at the hotel. Guests love the story and the taste.”</p>
+                    <strong>Sulby Glen Hotel</strong>
+                </article>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="card review-form">
+                <h2>Share Your Manx Biltong Story</h2>
+                <p>Reviews are moderated before posting. We’ll email you if we have any follow-up questions.</p>
+                <form action="https://formspree.io/f/xldarvrl" method="POST" accept-charset="UTF-8">
+                    <input type="hidden" name="formName" value="Customer Review">
+                    <div>
+                        <label for="review-name">Name</label>
+                        <input type="text" id="review-name" name="name" placeholder="Your name" required>
+                    </div>
+                    <div>
+                        <label for="review-email">Email <span style="color: var(--color-muted); font-weight:400;">(optional, for follow-up)</span></label>
+                        <input type="email" id="review-email" name="email" placeholder="you@example.com">
+                    </div>
+                    <div>
+                        <label for="review-rating">Rating</label>
+                        <select id="review-rating" name="rating" required>
+                            <option value="" disabled selected>Select a rating</option>
+                            <option value="5">★★★★★ - Outstanding</option>
+                            <option value="4">★★★★☆ - Loved it</option>
+                            <option value="3">★★★☆☆ - Pretty good</option>
+                            <option value="2">★★☆☆☆ - Room to improve</option>
+                            <option value="1">★☆☆☆☆ - Not for me</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="review-message">Your Review</label>
+                        <textarea id="review-message" name="message" placeholder="Tell us how you enjoyed Manx Biltong..." required></textarea>
+                    </div>
+                    <button class="btn btn--primary" type="submit">Submit Review</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div>
+                <div class="logo">
+                    <span>Manx</span> Biltong
+                </div>
+                <p>Premium grass-fed biltong handcrafted on the Isle of Man. Taste the island heritage in every slice.</p>
+                <div class="social-links" aria-label="Social media links">
+                    <a href="#" aria-label="Follow Manx Biltong on Instagram">IG</a>
+                    <a href="#" aria-label="Follow Manx Biltong on Facebook">FB</a>
+                    <a href="#" aria-label="Follow Manx Biltong on Twitter">X</a>
+                </div>
+            </div>
+            <div>
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="find-us.html">Where to Find Us</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <p><strong>Email:</strong> <a href="mailto:orders@manxbiltong.com">orders@manxbiltong.com</a><br><strong>Phone:</strong> <a href="tel:+447624373559">+44 7624 373559</a></p>
+            </div>
+        </div>
+        <div class="footer-note">
+            © <span id="current-year"></span> Manx Biltong. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
+
