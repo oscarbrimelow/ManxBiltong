@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Manx Biltong | Enquiries &amp; Orders</title>
+    <meta name="description" content="Get in touch with Manx Biltong for orders, wholesale enquiries, and events. Visit our Douglas smokehouse on the Isle of Man.">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container nav">
+            <a href="index.html" class="logo" aria-label="Manx Biltong home">
+                <span>Manx</span> Biltong
+            </a>
+            <button class="nav__toggle" data-nav-toggle aria-label="Toggle navigation" aria-expanded="false">☰</button>
+            <ul class="nav__links" data-nav-links>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="find-us.html">Where to Find Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="container">
+            <div class="section-heading">
+                <span>Say Hello</span>
+                <h1>We’d Love to Hear from You</h1>
+                <p>Whether you’re planning an event, restocking your pantry, or just curious about our curing process, drop Steven Brimelow a note.</p>
+            </div>
+            <div class="contact-layout">
+                <form data-contact-form>
+                    <div>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your email" required>
+                    </div>
+                    <div>
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="How can we help?" required></textarea>
+                    </div>
+                    <button class="btn btn--primary" type="submit">Send Message</button>
+                </form>
+                <aside>
+                    <div class="card">
+                        <h2>Contact Details</h2>
+                        <p>Prefer to talk it through? Drop Steven an email or give him a call and he will help you plan the perfect order.</p>
+                        <p><strong>Email:</strong> <a href="mailto:steve@brimelow.org">steve@brimelow.org</a><br><strong>Phone:</strong> <a href="tel:+447624373559">+44 7624 373559</a></p>
+                        <p><strong>Location:</strong> Peel Road, Douglas, Isle of Man</p>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="newsletter">
+                <div>
+                    <h2>Stay in the Manx Biltong Loop</h2>
+                    <p>Monthly updates featuring new flavours, market pop-ups, and subscriber-only specials straight from Steven Brimelow.</p>
+                </div>
+                <form class="newsletter-form" data-newsletter>
+                    <label class="sr-only" for="contact-email">Email address</label>
+                    <input type="email" id="contact-email" name="email" placeholder="Email address" required>
+                    <button class="btn btn--primary" type="submit">Sign Up</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div>
+                <div class="logo">
+                    <span>Manx</span> Biltong
+                </div>
+                <p>Premium grass-fed biltong handcrafted on the Isle of Man. Taste the island heritage in every slice.</p>
+                <div class="social-links" aria-label="Social media links">
+                    <a href="#" aria-label="Follow Manx Biltong on Instagram">IG</a>
+                    <a href="#" aria-label="Follow Manx Biltong on Facebook">FB</a>
+                    <a href="#" aria-label="Follow Manx Biltong on Twitter">X</a>
+                </div>
+            </div>
+            <div>
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="find-us.html">Where to Find Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Visit</h4>
+                <p>Peel Road, Douglas<br>Isle of Man IM2 4RA<br>United Kingdom</p>
+                <p><strong>Email:</strong> <a href="mailto:steve@brimelow.org">steve@brimelow.org</a><br><strong>Phone:</strong> <a href="tel:+447624373559">+44 7624 373559</a></p>
+            </div>
+        </div>
+        <div class="footer-note">
+            © <span id="current-year"></span> Manx Biltong. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
+
