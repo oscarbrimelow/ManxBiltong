@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manx Biltong Products | Premium Grass-Fed Selection</title>
+    <meta name="description" content="Discover the Classic Manx Cut biltong from Manx Biltong, grass-fed Isle of Man beef cured by Steven Brimelow. Learn tasting notes, ingredients, and where to buy.">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container nav">
+            <a href="index.html" class="logo" aria-label="Manx Biltong home">
+                <span>Manx</span> Biltong
+            </a>
+            <button class="nav__toggle" data-nav-toggle aria-label="Toggle navigation" aria-expanded="false">☰</button>
+            <ul class="nav__links" data-nav-links>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="find-us.html">Where to Find Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="container">
+            <div class="section-heading">
+                <span>Signature Release</span>
+                <h1>The Classic Manx Cut</h1>
+                <p>Our single, meticulously crafted product showcases the very best of island-raised, grass-fed beef, hand trimmed, slowly cured, and finished with Manx sea salt.</p>
+            </div>
+            <div class="products-grid single">
+                <article class="product-card bestseller">
+                    <div class="product-gallery">
+                        <img src="assets/images/ManxBiltong.jpg" alt="Classic Manx Biltong slices on wooden board">
+                        <img src="assets/images/ManxBiltongBack.jpg" alt="Back of Manx Biltong pack showing ingredients and nutritional values">
+                    </div>
+                    <div class="product-card__content">
+                        <h2>Classic Manx Cut</h2>
+                        <p>This flagship biltong delivers buttery tenderness, gentle coriander spice, and a savoury finish inspired by the Atlantic breeze.</p>
+                        <ul>
+                            <li>Sourced from Isle of Man grass-fed beef</li>
+                            <li>Seasoned with Steven Brimelow’s family spice blend</li>
+                            <li>Air-dried in small batches for perfect texture</li>
+                        </ul>
+                        <div class="product-card__price">£5.00 / 100g pack</div>
+                        <button class="btn btn--primary product-card__cta" type="button" data-add-to-basket>Add to Basket</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="section-heading">
+                <span>Product Details</span>
+                <h2>Everything You Need to Know About the Classic Manx Cut</h2>
+                <p>From flavour profile to serving inspiration, here’s what makes Steven Brimelow’s single product stand out.</p>
+            </div>
+            <div class="split">
+                <article class="card">
+                    <h3>Tasting Notes</h3>
+                    <p>Expect a balanced savoury profile with coriander warmth, subtle pepper, and a clean finish that highlights the quality of Manx beef.</p>
+                </article>
+                <article class="card">
+                    <h3>Ingredients</h3>
+                    <p>Grass-fed beef, sea salt, coriander, black pepper, toasted fennel, and a touch of brown sugar, with nothing artificial.</p>
+                </article>
+                <article class="card">
+                    <h3>Serving Ideas</h3>
+                    <p>Pair with Isle of Man cheddar, toss through salads for protein, or enjoy straight from the pack as an on-the-go staple.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="newsletter">
+                <div>
+                    <h2>Wholesale &amp; Corporate Gifting</h2>
+                    <p>Partner with Manx Biltong for corporate hampers, hotel welcome packs, and specialty retail. Request our wholesale catalogue.</p>
+                </div>
+                <form class="newsletter-form" data-newsletter>
+                    <label class="sr-only" for="wholesale-email">Email address</label>
+                    <input type="email" id="wholesale-email" name="email" placeholder="Business email" required>
+                    <button class="btn btn--primary" type="submit">Get Catalogue</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div>
+                <div class="logo">
+                    <span>Manx</span> Biltong
+                </div>
+                <p>Premium grass-fed biltong handcrafted on the Isle of Man. Taste the island heritage in every slice.</p>
+                <div class="social-links" aria-label="Social media links">
+                    <a href="#" aria-label="Follow Manx Biltong on Instagram">IG</a>
+                    <a href="#" aria-label="Follow Manx Biltong on Facebook">FB</a>
+                    <a href="#" aria-label="Follow Manx Biltong on Twitter">X</a>
+                </div>
+            </div>
+            <div>
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="find-us.html">Where to Find Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Visit</h4>
+                <p>Peel Road, Douglas<br>Isle of Man IM2 4RA<br>United Kingdom</p>
+                <p><strong>Email:</strong> <a href="mailto:steve@brimelow.org">steve@brimelow.org</a><br><strong>Phone:</strong> <a href="tel:+447624373559">+44 7624 373559</a></p>
+            </div>
+        </div>
+        <div class="footer-note">
+            © <span id="current-year"></span> Manx Biltong. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
+
