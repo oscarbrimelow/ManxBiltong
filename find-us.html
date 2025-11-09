@@ -68,7 +68,8 @@
                     <h2>Become a Stockist</h2>
                     <p>Restaurants, farm shops, and hotels across the British Isles can carry Manx Biltong. Request our wholesale pack list and tasting sample.</p>
                 </div>
-                <form class="newsletter-form" data-newsletter>
+                <form class="newsletter-form" data-newsletter action="https://formspree.io/f/your-newsletter-form" method="POST" accept-charset="UTF-8">
+                    <input type="hidden" name="formName" value="Newsletter - Stockist Enquiry">
                     <label class="sr-only" for="stockist-email">Email address</label>
                     <input type="email" id="stockist-email" name="email" placeholder="Business email" required>
                     <button class="btn btn--primary" type="submit">Request Info</button>
