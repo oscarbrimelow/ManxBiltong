@@ -795,6 +795,43 @@ footer {
     }
 }
 
+/* --------------------------------------------------
+   Reviews
+   -------------------------------------------------- */
+.testimonials {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.testimonial-card {
+    background-color: var(--color-light);
+    padding: 2.4rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    position: relative;
+}
+
+.testimonial-card::before {
+    content: "“";
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-size: 4rem;
+    color: rgba(140, 47, 47, 0.15);
+}
+
+.testimonial-card p {
+    color: var(--color-muted);
+    font-style: italic;
+}
+
+.testimonial-card strong {
+    display: block;
+    margin-top: 1.5rem;
+    color: var(--color-primary-dark);
+}
+
 @media (max-width: 480px) {
     section {
         padding: 3rem 0;
