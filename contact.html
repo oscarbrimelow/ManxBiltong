@@ -39,7 +39,8 @@
                 <p>Whether you’re planning an event, restocking your pantry, or just curious about our curing process, drop Steven Brimelow a note.</p>
             </div>
             <div class="contact-layout">
-                <form data-contact-form>
+                <form data-contact-form action="https://formspree.io/f/mrbrzjdb" method="POST" accept-charset="UTF-8">
+                    <input type="hidden" name="formName" value="Website Contact Form">
                     <div>
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -70,7 +71,8 @@
                     <h2>Stay in the Manx Biltong Loop</h2>
                     <p>Monthly updates featuring new flavours, market pop-ups, and subscriber-only specials straight from Steven Brimelow.</p>
                 </div>
-                <form class="newsletter-form" data-newsletter>
+                <form class="newsletter-form" data-newsletter action="https://formspree.io/f/your-newsletter-form" method="POST" accept-charset="UTF-8">
+                    <input type="hidden" name="formName" value="Newsletter - Contact">
                     <label class="sr-only" for="contact-email">Email address</label>
                     <input type="email" id="contact-email" name="email" placeholder="Email address" required>
                     <button class="btn btn--primary" type="submit">Sign Up</button>
