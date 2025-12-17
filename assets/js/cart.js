@@ -58,7 +58,7 @@ function renderCart() {
     cartHTML += '</div>';
     cartItemsDiv.innerHTML = cartHTML;
     
-    summaryDiv.innerHTML = `<div style="text-align: right; padding: 30px 0; border-top: 2px solid #8c2f2f; margin-top: 20px;"><div style="font-size: 24px; font-weight: 700; color: #8c2f2f;">Total: £${total.toFixed(2)}</div></div>`;
+    summaryDiv.innerHTML = `\n        <div style=\"background: #f5e1c8; padding: 15px; border-radius: 4px; margin: 20px 0; font-size: 14px; color: #2b2b2b;\">\n            <strong>Delivery Info:</strong> We deliver locally across the Isle of Man for £1.50. Orders are limited to 15 packets maximum.\n        </div>\n        <div style=\"text-align: right; padding: 30px 0; border-top: 2px solid #8c2f2f; margin-top: 20px;\">\n            <div style=\"font-size: 24px; font-weight: 700; color: #8c2f2f;\">Total (inc. £1.50 delivery): £${(total + 1.50).toFixed(2)}</div>\n        </div>\n    `;
     actionsDiv.innerHTML = `<div style="display: flex; gap: 10px; margin-top: 20px;"><button id="checkout-btn" style="flex: 1; background: #8c2f2f; color: white; padding: 14px; border: none; border-radius: 4px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.3s;">Proceed to Checkout</button><a href="/products/" style="flex: 1; background: #e8dcc8; color: #8c2f2f; padding: 14px; border: none; border-radius: 4px; font-size: 16px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; display: flex; align-items: center; justify-content: center;">Continue Shopping</a></div>`;
 
     // Quantity change
@@ -109,48 +109,11 @@ function checkout() {
         return;
     }
     
-    // Prepare cart for API
-    const products = window.MANX_CONFIG.products;
-    const cartForApi = cart.map(item => {
-        const product = products.find(p => p.id === item.id);
-        return {
-            name: product ? product.name : item.id,
-            price: product ? product.price : 0,
-            qty: item.qty
-        };
-    });
+    // Store cart in sessionStorage for contact form
+    sessionStorage.setItem('checkout_cart', JSON.stringify(cart));
     
-    const region = 'IM';
-    const checkoutBtn = document.getElementById('checkout-btn');
-    checkoutBtn.disabled = true;
-    checkoutBtn.textContent = 'Processing...';
-    
-    fetch('https://manx-biltong-vercel.vercel.app/api/create-checkout-session', {
-        method: 'POST',
-        mode: 'cors',
-        headers: { 
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ cart: cartForApi, region })
-    })
-    .then(res => {
-        if (!res.ok) {
-            return res.json().then(data => { throw new Error(data.error || `HTTP error! status: ${res.status}`); });
-        }
-        return res.json();
-    })
-    .then(data => {
-        if (data.id) {
-            window.location.href = `https://checkout.stripe.com/pay/${data.id}`;
-        } else {
-            throw new Error(data.error || 'No session ID returned');
-        }
-    })
-    .catch(err => {
-        checkoutBtn.disabled = false;
-        checkoutBtn.textContent = 'Proceed to Checkout';
-        alert('Checkout error: ' + err.message + '. Please try again or contact us.');
-    });
+    // Redirect to contact page for manual checkout
+    window.location.href = '/contact/?checkout=true';
 }
 
 document.addEventListener('DOMContentLoaded', renderCart);
