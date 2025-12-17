@@ -451,6 +451,28 @@ header {
 .product-card__price {
     font-weight: 700;
     color: var(--color-primary-dark);
+    margin-top: auto;
+}
+
+.product-card__actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.qty-input {
+    width: 70px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.product-card__actions button {
+    flex: 1;
 }
 
 .product-card__cta {
