@@ -25,11 +25,10 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/about/">About</a></li>
                 <li><a href="/products/">Products</a></li>
-                <li><a href="/shop/">Shop</a></li>
-                <li><a href="/cart/">Cart</a></li>
                 <li><a href="/find-us/">Where to Find Us</a></li>
                 <li><a href="/reviews/">Reviews</a></li>
                 <li><a href="/contact/">Contact</a></li>
+                <li><a href="/cart/">Cart</a></li>
             </ul>
         </div>
     </header>
@@ -54,6 +53,10 @@
                             <li>Traditional recipe with no artificial ingredients</li>
                         </ul>
                         <div class="product-card__price">£5.00 / 100g pack</div>
+                        <div class="product-card__actions">
+                            <input type="number" min="1" max="15" value="1" id="qty-biltong-sliced" class="qty-input">
+                            <button class="btn btn--primary" onclick="addToCart('biltong-sliced', parseInt(document.getElementById('qty-biltong-sliced').value, 10))">Add to Cart</button>
+                        </div>
                     </div>
                 </article>
                 <article class="product-card">
@@ -68,6 +71,10 @@
                             <li>Perfect for adventurous palates</li>
                         </ul>
                         <div class="product-card__price">£5.00 / 100g pack</div>
+                        <div class="product-card__actions">
+                            <input type="number" min="1" max="15" value="1" id="qty-biltong-chilli-sliced" class="qty-input">
+                            <button class="btn btn--primary" onclick="addToCart('biltong-chilli-sliced', parseInt(document.getElementById('qty-biltong-chilli-sliced').value, 10))">Add to Cart</button>
+                        </div>
                     </div>
                 </article>
                 <article class="product-card">
@@ -82,6 +89,10 @@
                             <li>Ideal for hiking, sports, or travel</li>
                         </ul>
                         <div class="product-card__price">£5.00 / 100g pack</div>
+                        <div class="product-card__actions">
+                            <input type="number" min="1" max="15" value="1" id="qty-stokkies" class="qty-input">
+                            <button class="btn btn--primary" onclick="addToCart('stokkies', parseInt(document.getElementById('qty-stokkies').value, 10))">Add to Cart</button>
+                        </div>
                     </div>
                 </article>
                 <article class="product-card">
@@ -96,6 +107,10 @@
                             <li>Great for active lifestyles</li>
                         </ul>
                         <div class="product-card__price">£5.00 / 100g pack</div>
+                        <div class="product-card__actions">
+                            <input type="number" min="1" max="15" value="1" id="qty-chilli-stokkies" class="qty-input">
+                            <button class="btn btn--primary" onclick="addToCart('chilli-stokkies', parseInt(document.getElementById('qty-chilli-stokkies').value, 10))">Add to Cart</button>
+                        </div>
                     </div>
                 </article>
             </div>
@@ -173,9 +188,30 @@
         </div>
     </footer>
 
+    <script src="/assets/js/config.js"></script>
     <script src="/assets/js/main.js"></script>
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        function addToCart(id, qty = 1) {
+            const CART_KEY = 'manx_cart';
+            let cart = JSON.parse(localStorage.getItem(CART_KEY) || '[]');
+            const existing = cart.find(item => item.id === id);
+            if (existing) {
+                existing.qty += qty;
+            } else {
+                cart.push({ id, qty });
+            }
+            const maxQty = window.MANX_CONFIG ? window.MANX_CONFIG.maxOrderQuantity : 15;
+            cart = cart.map(item => {
+                if (item.qty > maxQty) {
+                    item.qty = maxQty;
+                }
+                return item;
+            });
+            localStorage.setItem(CART_KEY, JSON.stringify(cart));
+            alert('Added to cart! Visit the Cart page to checkout.');
+        }
     </script>
 </body>
 
